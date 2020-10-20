@@ -5,14 +5,21 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import React, { FC } from "react";
+import "normalize.css";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+import GlobalStyles from '../styles/globalStyle';
+import Typography from '../styles/typography';
+import { useStaticQuery, graphql } from "gatsby";
+import Header from "./header";
 
-import Header from "./header"
-import "./layout.css"
+const SiteWrapperStyles = styled.div`
+  margin: 0 auto;
+  max-width: 96rem;
+`;
 
-const Layout = ({ children }) => {
+const Layout: FC = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -26,13 +33,9 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
+      <GlobalStyles />
+      <Typography />
+      <SiteWrapperStyles>
         <main>{children}</main>
         <footer style={{
           marginTop: `2rem`
@@ -41,7 +44,7 @@ const Layout = ({ children }) => {
           {` `}
           <a href="https://www.gatsbyjs.com">Gatsby</a>
         </footer>
-      </div>
+      </SiteWrapperStyles>
     </>
   )
 }
