@@ -1,43 +1,49 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
+import theme from 'styled-theming';
 import { darken } from 'polished';
-import { color as defaultColors, breakpoint } from '../styles/variables';
 
 export interface ButtonProps {
   disabled?: boolean;
   label: string;
-  modifer?: string[];
   onClick?: () => void;
   outline?: boolean;
   size?: 'small' | 'medium' | 'large';
+  variant?: 'default' | 'primary' | 'success' | 'danger' | 'warning';
 }
 
-const StyledButton = styled.button`
-  background: ${defaultColors.primary};
-  border: 1px solid ${defaultColors.primary};
-  color: ${defaultColors.white};
-  padding: .75em 1.25em;
+const variantColor = theme.variants("mode", "variant", {
+  default: { light: props => props.theme.color.primary, dark: "#123456" },
+  primary: { light: props => props.theme.color.primary, dark: "#123456" },
+  success: { light: props => props.theme.color.comp1, dark: "#123456" },
+  warning: { light: props => props.theme.color.comp2, dark: "#123456" },
+  danger: { light: props => props.theme.color.comp3, dark: "#123456" },
+});
 
-  :hover {
-    background-color: ${ darken( 0.2, defaultColors.primary)}
-  }
+const StyledButton = styled.button`
+  background: ${props => props.outline !== true ? variantColor : 'transparent'};
+  border: 1px solid ${variantColor};
+  color: ${props => props.outline === true ? variantColor : props => props.theme.color.white};
+  padding: .5em 1.25em;
 `
 
 export const Button: React.FC<ButtonProps> = ({
   disabled = false,
   outline = false,
   size = "medium",
-  modifer,
   label,
+  variant = "default",
   ...props
 }) => {
- return (
-  <StyledButton 
-    type="button"
-    disabled={disabled}
-    {...props}
-  >
-    {label}
-  </StyledButton>
- );
+  return (
+    <StyledButton
+      disabled={disabled}
+      outline={outline}
+      type="button"
+      variant={variant}
+      {...props}
+    >
+      {label}
+    </StyledButton>
+  );
 };

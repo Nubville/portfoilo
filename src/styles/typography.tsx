@@ -7,19 +7,20 @@ const Typography = createGlobalStyle`
   }
 
   html {
-    color: var(--green);
+    color: ${props => props.theme.color.comp3};
     font-family: var(--body-fonts);
     font-weight: 400;
   }
 
   h1,h2,h3,h4,h5,h6 {
+    color: ${props => props.theme.color.primary};
     font-family: var(--header-fonts);
     margin: 0;
     font-weight: 700;
   }
 
   a {
-    color: var(--brown);
+    color: ${props => props.theme.color.comp1};
   }
 `;
 

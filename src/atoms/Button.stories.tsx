@@ -14,13 +14,38 @@ export default {
 
 const Template: Story<ButtonProps> = (args) => <Button {...args} />;
 
+export const Default = Template.bind({});
+Default.args = {
+  label: 'Button',
+  variant: 'default'
+};
+
 export const Primary = Template.bind({});
 Primary.args = {
   label: 'Button',
+  variant: 'primary'
+};
+
+export const Success = Template.bind({});
+Success.args = {
+  label: 'Button',
+  variant: 'success'
+};
+
+export const Danger = Template.bind({});
+Danger.args = {
+  label: 'Button',
+  variant: 'danger'
+};
+
+export const Warning = Template.bind({});
+Warning.args = {
+  label: 'Button',
+  variant: 'warning'
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
-  label: 'Button',
   disabled: true,
+  label: 'Button',
 };
