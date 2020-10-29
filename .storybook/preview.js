@@ -1,15 +1,12 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-
 import GlobalStyle  from '../src/styles/globalStyle';
-import Typography from '../src/styles/typography';
-import ThemeDefault from '../src/styles/themeDefault';
+import theme from '../src/theme';
 
 export const decorators = [
   (Story) => (
-    <ThemeProvider theme={ThemeDefault}>
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Typography />
       <Story />
     </ThemeProvider>
   ),

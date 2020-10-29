@@ -8,8 +8,7 @@
 import React, { FC } from "react";
 import styled, {ThemeProvider} from "styled-components";
 import GlobalStyles from '../styles/globalStyle';
-import Typography from '../styles/typography';
-import ThemeDefault from '../styles/themeDefault';
+import theme from '../theme';
 import {useStaticQuery, graphql} from "gatsby";
 import Header from "./header";
 
@@ -31,10 +30,9 @@ const Layout: FC = ({ children }) => {
 
   return (
     <>
-      <ThemeProvider theme={ThemeDefault}>
+      <ThemeProvider theme={theme}>
         <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
         <GlobalStyles />
-        <Typography />
         <SiteWrapperStyles>
           <main>{children}</main>
           <footer style={{
