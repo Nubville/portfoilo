@@ -6,43 +6,41 @@
  */
 
 import React, { FC } from "react";
-import styled, {ThemeProvider} from "styled-components";
-import GlobalStyles from '../styles/globalStyle';
-import theme from '../theme';
-import {useStaticQuery, graphql} from "gatsby";
-import Header from "./header";
+import GlobalStyles from './00-base/00-defaults/globalStyle';
+import { Container } from './01-atoms/container';
+import Footer from "./03-organisms/site/footer/Footer";
+import Header from "./03-organisms/site/header/Header";
+import Logo from "./01-atoms/images/logo/Logo";
+import styled, { ThemeProvider } from "styled-components";
+import theme from './00-base/01-theme/theme';
+import { Link } from "gatsby"
+import { ThemeType } from "./00-base/01-theme/theme.type";
 
-const SiteWrapperStyles = styled.div`
-  margin: 0 auto;
-  max-width: 96rem;
+export interface LayoutProps {
+  theme?: ThemeType;
+}
+
+const SiteGridSWrapper = styled.div`
+
 `;
 
-const Layout: FC = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
+const Layout: FC<LayoutProps> = ({ children }) => {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-        <GlobalStyles />
-        <SiteWrapperStyles>
-          <main>{children}</main>
-          <footer style={{
-            marginTop: `2rem`
-          }}>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.com">Gatsby</a>
-          </footer>
-        </SiteWrapperStyles>
+        <SiteGridSWrapper>
+          <Header p={["x3", "x4"]}>
+            <Container>
+              <Link to="/">Home</Link>
+            </Container>
+          </Header>
+          <GlobalStyles />
+          <main>
+            {children}
+          </main>
+          <Footer>
+          </Footer>
+        </SiteGridSWrapper>
       </ThemeProvider>
     </>
   )
