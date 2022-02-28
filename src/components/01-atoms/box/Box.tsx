@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 import {
   color,
   space,
@@ -19,8 +19,8 @@ import {
   FlexGrowProps,
   PositionProps,
   BorderProps,
-  FlexboxProps
-} from "styled-system";
+  FlexboxProps,
+} from 'styled-system';
 
 export type BoxProps = ColorProps &
   SpaceProps &
@@ -32,7 +32,7 @@ export type BoxProps = ColorProps &
   PositionProps &
   BorderProps &
   FlexboxProps &
-  React.ComponentPropsWithRef<"div"> & {
+  React.ComponentPropsWithRef<'div'> & {
     as?: string;
   };
 

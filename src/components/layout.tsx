@@ -5,45 +5,39 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React, { FC } from "react";
+import React, { FC } from 'react';
 import GlobalStyles from './00-base/00-defaults/globalStyle';
 import { Container } from './01-atoms/container';
-import Footer from "./03-organisms/site/footer/Footer";
-import Header from "./03-organisms/site/header/Header";
-import Logo from "./01-atoms/images/logo/Logo";
-import styled, { ThemeProvider } from "styled-components";
+import Footer from './03-organisms/site/footer/Footer';
+import Header from './03-organisms/site/header/Header';
+import Logo from './01-atoms/images/logo/Logo';
+import NamePlate from './02-molecules/name-plate/NamePlate';
+import styled, { ThemeProvider } from 'styled-components';
 import theme from './00-base/01-theme/theme';
-import { Link } from "gatsby"
-import { ThemeType } from "./00-base/01-theme/theme.type";
+import { Link } from 'gatsby';
+import { ThemeType } from './00-base/01-theme/theme.type';
 
 export interface LayoutProps {
   theme?: ThemeType;
 }
 
-const SiteGridSWrapper = styled.div`
+const InfoBlock = styled.div``;
 
-`;
+const SiteGridSWrapper = styled.div``;
 
 const Layout: FC<LayoutProps> = ({ children }) => {
   return (
     <>
       <ThemeProvider theme={theme}>
         <SiteGridSWrapper>
-          <Header p={["x3", "x4"]}>
-            <Container>
-              <Link to="/">Home</Link>
-            </Container>
-          </Header>
+          <Header></Header>
           <GlobalStyles />
-          <main>
-            {children}
-          </main>
-          <Footer>
-          </Footer>
+          <main>{children}</main>
+          <Footer></Footer>
         </SiteGridSWrapper>
       </ThemeProvider>
     </>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

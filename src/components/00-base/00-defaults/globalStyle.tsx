@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { setSaturation } from 'polished';
 //import "normalize.css";
 import theme from '../01-theme/theme';
 
@@ -14,8 +15,20 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: ${theme.colors.primary};
-    color: ${theme.colors.text};
+    background-image: linear-gradient(0deg, ${
+      theme.colors.layoutHorizontal
+    } 3.70%,
+      ${theme.colors.white} 3.70%,
+      ${theme.colors.white} 50%,
+      ${theme.colors.layoutHorizontal} 50%,
+      ${theme.colors.layoutHorizontal} 53.70%,
+      ${theme.colors.white} 53.70%,
+      ${theme.colors.white} 100%);
+    background-size: 54.00px 54.00px;
+    background-color: ${theme.colors.white};
+    padding: 0;
+    margin: 0;
+    color: ${theme.colors.primary};
     font-family: ${theme.fonts.body};
     font-size: 1.6rem;
   }
@@ -27,11 +40,12 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: ${theme.colors.cooltone1};
+    color: ${theme.colors.accent1};
     text-decoration: none;
+    transition: 0.3s color ease-in-out;
 
     &:hover {
-      color: ${theme.colors.cooltone3};
+      color: ${setSaturation('0.75', theme.colors.accent1)};
     }
   }
 `;

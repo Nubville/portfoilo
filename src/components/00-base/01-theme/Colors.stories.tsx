@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { Box, BoxProps } from '../../01-atoms/box/Box';
-import { theme } from '../../00-base/01-theme/theme';
-import { ColorOptions } from '../../00-base/01-theme/theme.type';
+import theme from './theme';
+import { ColorOptions } from './theme.type';
 
 export default {
   title: 'Theme/Colors',
@@ -38,10 +38,14 @@ const _Colors: Story<BoxProps> = (args) => {
         };
         return (
           <FlexedBox key={key} p={'x2'}>
-            <ColorSwatchBox style={bkgrdColorStyle} p={'x4'} mb={'x3'}></ColorSwatchBox>
+            <ColorSwatchBox
+              style={bkgrdColorStyle}
+              p={'x4'}
+              mb={'x3'}
+            ></ColorSwatchBox>
             <StyledSpan>Variable:</StyledSpan> <span>{key}</span>
           </FlexedBox>
-        )
+        );
       })}
     </ColorBoxGrid>
   );
