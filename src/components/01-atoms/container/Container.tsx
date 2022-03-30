@@ -14,7 +14,6 @@ export type ContainerProps = BaseContainerProps &
   React.ComponentPropsWithRef<'div'>;
 
 const StyledContainer: React.FC<ContainerProps> = styled.div`
-  border-left: 2px solid ${(props) => props.theme.colors.layoutVertical};
   padding-left: 10px;
   margin-left: auto;
   margin-right: auto;
