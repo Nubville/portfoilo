@@ -10,7 +10,7 @@ export interface BaseButtonProps {
   className?: string;
   disabled?: boolean;
   fullWidth?: boolean;
-  icon?: any;
+  icon?: string;
   iconSide?: 'left' | 'right';
   onClick?: () => void;
   size?: SizeType;

@@ -16,6 +16,7 @@ export type Colors = {
   accent1: string;
   accent2: string;
   accent3: string;
+  accent4: string;
   shade1: string;
   layoutVertical: string;
   layoutHorizontal: string;

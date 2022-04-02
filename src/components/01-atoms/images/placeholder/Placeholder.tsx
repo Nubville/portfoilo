@@ -20,13 +20,13 @@ export type PlaceholderProps = BasePlaceholderProps &
   React.ComponentPropsWithRef<'section'>;
 
 const StyledPlaceholder: React.FC<PlaceholderProps> = styled.div`
-  background-color: ${(props) => props.theme.colors.accent3};
+  background-color: ${(props) => props.theme.colors.shade1};
   background-image: repeating-linear-gradient(
     45deg,
     transparent,
     transparent 10px,
-    rgba(177, 180, 181, 0.2) 10px,
-    rgba(177, 180, 181, 0.2) 12px
+    rgba(191, 192, 192, 0.2) 10px,
+    rgba(191, 192, 192, 0.2) 12px
   );
 
   padding: ${(props) => props.theme.space.x2}px;

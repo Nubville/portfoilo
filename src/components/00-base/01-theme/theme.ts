@@ -34,13 +34,14 @@ const mediaQueries: MediaQueries = {
 
 const colors: Colors = {
   black: '#000',
-  accent1: '#2d4059',
-  accent2: '#ff5722',
-  accent3: '#eeeeee',
+  accent1: '#BFC0C0',
+  accent2: '#EF8354',
+  accent3: '#91340D',
+  accent4: '#4F5D75',
   shade1: '#f2f2f2',
   layoutHorizontal: '#a3c2f0',
   layoutVertical: '#ffb8c8',
-  primary: '#222831',
+  primary: '#2D3142',
   white: '#FFF',
 };
 

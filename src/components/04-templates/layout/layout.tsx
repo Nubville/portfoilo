@@ -6,35 +6,33 @@
  */
 
 import React, { FC } from 'react';
-import GlobalStyles from './00-base/00-defaults/globalStyle';
-import { Container } from './01-atoms/container';
-import Footer from './03-organisms/site/footer/Footer';
-import Header from './03-organisms/site/header/Header';
-import Logo from './01-atoms/images/logo/Logo';
-import NamePlate from './02-molecules/name-plate/NamePlate';
+import GlobalStyles from '../../00-base/00-defaults/globalStyle';
+import { Container } from '../../01-atoms/container';
+import Footer from '../../03-organisms/footer/Footer';
+import Header from '../../03-organisms/header/Header';
 import styled, { ThemeProvider } from 'styled-components';
-import theme from './00-base/01-theme/theme';
+import theme from '../../00-base/01-theme/theme';
 import { Link } from 'gatsby';
-import { ThemeType } from './00-base/01-theme/theme.type';
+import { ThemeType } from '../../00-base/01-theme/theme.type';
 
 export interface LayoutProps {
   theme?: ThemeType;
 }
 
-const InfoBlock = styled.div``;
-
-const SiteGridSWrapper = styled.div``;
+const SiteWrapper = styled.div`
+  position: relative;
+`;
 
 const Layout: FC<LayoutProps> = ({ children }) => {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <SiteGridSWrapper>
+        <SiteWrapper>
           <Header></Header>
           <GlobalStyles />
           <main>{children}</main>
           <Footer></Footer>
-        </SiteGridSWrapper>
+        </SiteWrapper>
       </ThemeProvider>
     </>
   );

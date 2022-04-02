@@ -22,9 +22,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1.6rem;
 
     ::after {
-      background-image: linear-gradient(0deg, ${
-        theme.colors.layoutHorizontal
-      } 3.70%,
+      background-image: linear-gradient(0deg, ${theme.colors.layoutHorizontal} 3.70%,
         ${theme.colors.white} 3.70%,
         ${theme.colors.white} 50%,
         ${theme.colors.layoutHorizontal} 50%,
@@ -53,12 +51,12 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: ${theme.colors.accent1};
+    color: ${theme.colors.accent3};
     text-decoration: none;
     transition: 0.3s color ease-in-out;
 
     &:hover {
-      color: ${setSaturation('0.75', theme.colors.accent1)};
+      color: ${theme.colors.accent4};
     }
   }
 `;

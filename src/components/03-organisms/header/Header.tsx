@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { space, SpaceProps } from 'styled-system';
-import { ThemeType } from '../../../00-base/01-theme/theme.type';
-import { Container } from '../../../01-atoms/container';
-import NamePlate from '../../../02-molecules/name-plate/NamePlate';
+import { ThemeType } from '../../00-base/01-theme/theme.type';
+import { Container } from '../../01-atoms/container';
+import NamePlate from '../../02-molecules/name-plate/NamePlate';
 
 export interface BaseHeaderProps {
   theme?: ThemeType;
