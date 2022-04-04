@@ -19,6 +19,10 @@ const StyledSection: React.FC = styled.section`
   padding: ${(props) => props.theme.space.x4}px 0;
 `;
 
+const StyledHeading = styled(Heading)`
+  color: ${(props) => props.theme.colors.primary};
+`;
+
 const StyledAboutMe: React.FC<AboutMeProps> = styled.div`
   overflow: hidden;
   border: dashed 2px ${(props) => props.theme.colors.accent1};
@@ -36,7 +40,7 @@ const StyledSpan = styled.span`
   background: linear-gradient(
     180deg,
     ${(props) => props.theme.colors.accent2} 0%,
-    ${(props) => props.theme.colors.accent3} 50%,
+    ${(props) => props.theme.colors.accent3} 35%,
     ${(props) => props.theme.colors.accent4} 100%
   );
 
@@ -69,13 +73,13 @@ const AboutMe: React.FC<AboutMeProps> = ({ ...props }) => {
         <StyledLogo />
         <FlexContainer>
           <FlexContentContainer>
-            <Heading size={1} mb={'0'}>
+            <StyledHeading size={1} mb={'0'}>
               I'm <StyledSpan>Andrew Garman</StyledSpan>, a front end tech lead
               at{' '}
               <StyledLink href="https://www.geekhive.com">Geekhive</StyledLink>,
               designer, two time nominee for "Greatest Dad" and builder of
               things.
-            </Heading>
+            </StyledHeading>
           </FlexContentContainer>
         </FlexContainer>
       </StyledAboutMe>
