@@ -1,17 +1,32 @@
 import React from 'react';
 import styled from 'styled-components';
-import {
-  space,
-  SpaceProps
-} from "styled-system";
+import { space, SpaceProps } from 'styled-system';
+import { ThemeType } from '../../00-base/01-theme/theme.type';
+import { Container } from '../../01-atoms/container';
 
-export type HeaderProps = SpaceProps &
-  React.ComponentPropsWithRef<"footer"> & {
+export interface BaseFooterProps {
+  theme?: ThemeType;
+}
+
+export type FooterProps = BaseFooterProps &
+  SpaceProps &
+  React.ComponentPropsWithRef<'footer'> & {
     children?: React.ReactNode;
   };
 
-export const Footer: React.FC<HeaderProps> = styled.footer`
+const StyledFooter: React.FC<FooterProps> = styled.footer`
+  background: ${(props) => props.theme.colors.accent4};
+  color: ${(props) => props.theme.colors.shade1};
+  padding: ${(props) => props.theme.space.x4}px 0;
   ${space}
-`
+`;
+
+const Footer: React.FC<FooterProps> = ({ children, ...props }) => {
+  return (
+    <StyledFooter {...props}>
+      <Container>Fooooter</Container>
+    </StyledFooter>
+  );
+};
 
 export default Footer;

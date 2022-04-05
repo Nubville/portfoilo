@@ -24,8 +24,8 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <Container>
-      <IntroductionBlock mb={'x4'} />
-      <AboutMe />
+      <IntroductionBlock mb={'x5'} />
+      <AboutMe mb={'x5'} />
     </Container>
   </Layout>
 );

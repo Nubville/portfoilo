@@ -11,7 +11,9 @@ export interface BaseHeaderProps {
 
 export type HeaderProps = BaseHeaderProps &
   SpaceProps &
-  React.ComponentPropsWithRef<'header'>;
+  React.ComponentPropsWithRef<'header'> & {
+    children?: React.ReactNode;
+  };
 
 const StyledHeader: React.FC<HeaderProps> = styled.header`
   background: ${(props) => props.theme.colors.white};

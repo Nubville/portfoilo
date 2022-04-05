@@ -7,11 +7,11 @@ import Placeholder from '../../01-atoms/images/placeholder/Placeholder';
 import LogoSVG from '../../../images/svg/rw-logo.svg';
 import { Heading } from '../../01-atoms/headings';
 
-export interface BaseAboutMeProps {
+export interface BaseIntroductionBlockProps {
   theme?: ThemeType;
 }
 
-export type AboutMeProps = BaseAboutMeProps &
+export type IntroductionBlockProps = BaseIntroductionBlockProps &
   SpaceProps &
   React.ComponentPropsWithRef<'section'>;
 
@@ -23,7 +23,7 @@ const StyledHeading = styled(Heading)`
   color: ${(props) => props.theme.colors.primary};
 `;
 
-const StyledAboutMe: React.FC<AboutMeProps> = styled.div`
+const StyledIntroductionBlock: React.FC<IntroductionBlockProps> = styled.div`
   overflow: hidden;
   border: dashed 2px ${(props) => props.theme.colors.accent1};
   padding: ${(props) => props.theme.space.x4}px;
@@ -66,10 +66,10 @@ const StyledLogo = styled(LogoSVG)`
   width: 25%;
 `;
 
-const AboutMe: React.FC<AboutMeProps> = ({ ...props }) => {
+const IntroductionBlock: React.FC<IntroductionBlockProps> = ({ ...props }) => {
   return (
     <StyledSection>
-      <StyledAboutMe {...props}>
+      <StyledIntroductionBlock {...props}>
         <StyledLogo />
         <FlexContainer>
           <FlexContentContainer>
@@ -82,9 +82,9 @@ const AboutMe: React.FC<AboutMeProps> = ({ ...props }) => {
             </StyledHeading>
           </FlexContentContainer>
         </FlexContainer>
-      </StyledAboutMe>
+      </StyledIntroductionBlock>
     </StyledSection>
   );
 };
 
-export default AboutMe;
+export default IntroductionBlock;
