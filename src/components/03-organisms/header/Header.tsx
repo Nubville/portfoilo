@@ -38,7 +38,7 @@ const FlexRow: React.FC = styled.div`
   flex-flow: column wrap;
 `;
 
-const Header: React.FC<HeaderProps> = ({ children, ...props }) => {
+export const Header: React.FC<HeaderProps> = ({ children, ...props }) => {
   return (
     <StyledHeader {...props}>
       <FlexHeightRow>

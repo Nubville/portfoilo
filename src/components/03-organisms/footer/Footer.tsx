@@ -21,10 +21,10 @@ const StyledFooter: React.FC<FooterProps> = styled.footer`
   ${space}
 `;
 
-const Footer: React.FC<FooterProps> = ({ children, ...props }) => {
+export const Footer: React.FC<FooterProps> = ({ children, ...props }) => {
   return (
     <StyledFooter {...props}>
-      <Container>Fooooter</Container>
+      <Container>Footer</Container>
     </StyledFooter>
   );
 };

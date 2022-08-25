@@ -77,7 +77,7 @@ const StyledButton = styled.button<ButtonProps>(
   space
 );
 
-const Button: React.FC<ButtonProps> = ({
+export const Button: React.FC<ButtonProps> = ({
   children,
   icon,
   iconSide,

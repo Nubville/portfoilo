@@ -42,7 +42,7 @@ const StyledContainer: React.FC<ContainerProps> = styled.div`
   ${space}
 `;
 
-const Container: React.FC<ContainerProps> = ({
+export const Container: React.FC<ContainerProps> = ({
   children,
   className,
   fullWidth,
