@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React, { FC } from 'react';
+import React, { FC, ReactNode } from 'react';
 import GlobalStyles from '../../00-base/00-defaults/globalStyle';
 import { Container } from '../../01-atoms/container';
 import Footer from '../../03-organisms/footer/Footer';
@@ -17,6 +17,7 @@ import { ThemeType } from '../../00-base/01-theme/theme.type';
 
 export interface LayoutProps {
   theme?: ThemeType;
+  children: ReactNode
 }
 
 const SiteWrapper = styled.div`
